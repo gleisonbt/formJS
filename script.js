@@ -2,7 +2,7 @@ var nomes = [];
 var idades = [];
 var linguagens = [];
 
-function guardarDados(){
+function guardarDados(event){
     var nome = document.getElementById("nome").value;
     var idade = document.getElementById("idade").value;
     var linguagem = document.getElementById("linguagem").
@@ -11,7 +11,9 @@ function guardarDados(){
 
     nomes.push(nome);
     idades.push(idade);
-    linguagens.push(linguagem); 
+    linguagens.push(linguagem);
+    
+    limparCampos();
 
     event.preventDefault();
 }
