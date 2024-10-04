@@ -1,6 +1,4 @@
-var nomes = [];
-var idades = [];
-var linguagens = [];
+var alunos = [];
 
 function guardarDados(event){
     var nome = document.getElementById("nome").value;
@@ -9,19 +7,20 @@ function guardarDados(event){
     options[document.getElementById("linguagem").
         selectedIndex].innerHTML;
 
-    nomes.push(nome);
-    idades.push(idade);
-    linguagens.push(linguagem);
+    alunos.push({
+        'nome':nome,
+        'idade':idade,
+        'linguagem':linguagem
+    });
     
-    limparCampos();
-
     event.preventDefault();
+
+    limparCampos();
 }
 
 function limparCampos(){
     document.getElementById("nome").value = "";
     document.getElementById("idade").value = "";
-    document.getElementById("linguagem").
     document.getElementById("linguagem").
         selectedIndex = 0;
 }
